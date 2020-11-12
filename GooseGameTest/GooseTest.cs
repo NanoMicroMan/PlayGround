@@ -20,7 +20,7 @@ namespace GooseGame
             {56, "Stay in space 56"},
             {58, "Death: Return your piece to the beginning - start the game again"},
             {63, "Finish: you ended the game"},
-            {88, "Move to space 53 and stay in prison for two turns"}
+            {88, "Move to space 53 and stay in prison for two turns"},
         };
 
         [SetUp]

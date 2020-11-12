@@ -19,22 +19,13 @@ namespace GooseGame
             {55, new SpacePrison()},
             {58, new SpaceDeath()},
             {63, new SpaceWon()},
-            {64, new SpaceBeyond()}
+            {64, new SpaceBeyond()},
         };
 
-        public static ISpace CreateInstance(int spaceIndex)
-        {
-            return GetSpecial(Math.Min(spaceIndex, 64)) ?? GetRegularOrJump(spaceIndex);
-        }
+        public static ISpace CreateInstance(int spaceIndex) => GetSpecial(Math.Min(spaceIndex, 64)) ?? GetRegularOrJump(spaceIndex);
 
-        private static ISpace GetSpecial(int idx)
-        {
-            return SpecialSpaces.ContainsKey(idx) ? SpecialSpaces[idx] : null;
-        }
+        private static ISpace GetSpecial(int idx) => SpecialSpaces.ContainsKey(idx) ? SpecialSpaces[idx] : null;
 
-        private static ISpace GetRegularOrJump(in int spaceIndex)
-        {
-            return spaceIndex % 6 == 0 ? (ISpace) new SpaceJump() : new SpaceRegular();
-        }
+        private static ISpace GetRegularOrJump(in int spaceIndex) => spaceIndex % 6 == 0 ? (ISpace) new SpaceJump() : new SpaceRegular();
     }
 }
