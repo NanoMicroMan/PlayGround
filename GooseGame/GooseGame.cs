@@ -2,7 +2,7 @@ using System;
 
 namespace GooseGame
 {
-    public class GooseGame
+    public static class GooseGame
     {
         public static string GetSpaceText(in int spaceIndex)
         {
