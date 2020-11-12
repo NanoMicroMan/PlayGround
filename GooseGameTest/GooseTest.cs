@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace GooseGameTest
+namespace GooseGame
 {
     public class Tests
     {
@@ -23,19 +23,16 @@ namespace GooseGameTest
             {88, "Move to space 53 and stay in prison for two turns"}
         };
 
-        private GooseGame.GooseGame _game;
-
         [SetUp]
         public void Setup()
         {
-            _game = new GooseGame.GooseGame();
         }
 
         [Test]
         public void TestTexts()
         {
             foreach (var (key, value) in _testTexts)
-                Assert.AreEqual(value, _game.GetSpaceText(key), "Strings differ at space index: " + key);
+                Assert.AreEqual(value, GooseGame.GetSpaceText(key), "Text differ at space index: " + key);
         }
     }
 }
